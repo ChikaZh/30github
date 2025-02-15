@@ -1,0 +1,19 @@
+public class Variables {
+    public static void main(String[] args) {
+        // Объявление переменных
+        int number = 10;             // Целочисленная переменная
+        double price = 19.99;        // Переменная с плавающей точкой
+        String productName = "Laptop"; // Строковая переменная
+        boolean isAvailable = true;  // Логическая переменная
+
+        // Использование переменных
+        System.out.println("Product: " + productName);
+        System.out.println("Price: " + price);
+        System.out.println("Available: " + isAvailable);
+        System.out.println("Quantity: " + number);
+
+        // Модификация значения переменной
+        number = 15;
+        System.out.println("Updated Quantity: " + number);
+    }
+}
