@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class IfElse {
+    public static void main(String[] args) {
+        // Создаем объект Scanner для чтения данных с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрос пользователю на ввод возраста
+        System.out.print("Введите ваш возраст: ");
+        int age = scanner.nextInt();
+
+        // Оператор if-else для проверки возраста
+        if (age < 18) {
+            System.out.println("Вы молоды, вам еще нет 18 лет.");
+        } else {
+            System.out.println("Вы взрослый человек, вам 18 лет или больше.");
+        }
+
+        // Закрываем Scanner
+        scanner.close();
+    }
+}
