@@ -1,0 +1,47 @@
+public class MethodsExample {
+
+    public static void main(String[] args) {
+        // Вызов метода, который суммирует два числа
+        int sumResult = addNumbers(10, 20);
+        System.out.println("Сумма чисел: " + sumResult);
+
+        // Вызов метода, который умножает два числа
+        int multiplyResult = multiplyNumbers(5, 6);
+        System.out.println("Произведение чисел: " + multiplyResult);
+
+        // Вызов метода, который проверяет, является ли число четным
+        boolean isEvenResult = isEven(15);
+        System.out.println("Число 15 четное? " + isEvenResult);
+
+        // Вызов метода, который находит наибольшее число
+        int maxResult = findMax(45, 22, 78);
+        System.out.println("Максимальное число: " + maxResult);
+    }
+
+    // Метод для сложения двух чисел
+    public static int addNumbers(int a, int b) {
+        return a + b;
+    }
+
+    // Метод для умножения двух чисел
+    public static int multiplyNumbers(int a, int b) {
+        return a * b;
+    }
+
+    // Метод для проверки, является ли число четным
+    public static boolean isEven(int num) {
+        return num % 2 == 0;
+    }
+
+    // Метод для нахождения наибольшего из трех чисел
+    public static int findMax(int a, int b, int c) {
+        int max = a;
+        if (b > max) {
+            max = b;
+        }
+        if (c > max) {
+            max = c;
+        }
+        return max;
+    }
+}
