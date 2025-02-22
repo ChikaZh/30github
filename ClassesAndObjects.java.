@@ -1,0 +1,26 @@
+// ClassesAndObjects.java
+public class ClassesAndObjects {
+    // Поля класса
+    String name;
+    int age;
+
+    // Конструктор класса
+    public ClassesAndObjects(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Метод для вывода информации о человеке
+    public void introduce() {
+        System.out.println("Привет, меня зовут " + name + ", и мне " + age + " лет.");
+    }
+
+    // Главный метод для создания объекта и вызова метода
+    public static void main(String[] args) {
+        // Создание объекта класса ClassesAndObjects
+        ClassesAndObjects person = new ClassesAndObjects("Алексей", 25);
+
+        // Вызов метода объекта
+        person.introduce();
+    }
+}
