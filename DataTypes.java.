@@ -1,0 +1,28 @@
+// DataTypes.java
+public class DataTypes {
+    public static void main(String[] args) {
+        // Примитивные типы данных
+        int intValue = 100;
+        double doubleValue = 3.14159;
+        char charValue = 'A';
+        boolean booleanValue = true;
+        byte byteValue = 127;
+        short shortValue = 32000;
+        long longValue = 1234567890L;
+        float floatValue = 9.81f;
+
+        // Ссылочный тип данных
+        String stringValue = "Hello, Java!";
+
+        // Вывод значений
+        System.out.println("int: " + intValue);
+        System.out.println("double: " + doubleValue);
+        System.out.println("char: " + charValue);
+        System.out.println("boolean: " + booleanValue);
+        System.out.println("byte: " + byteValue);
+        System.out.println("short: " + shortValue);
+        System.out.println("long: " + longValue);
+        System.out.println("float: " + floatValue);
+        System.out.println("String: " + stringValue);
+    }
+}
