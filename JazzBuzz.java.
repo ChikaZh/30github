@@ -1,0 +1,35 @@
+// FizzBuzz.java
+import java.util.*;
+
+public class FizzBuzz {
+    public List<String> fizzBuzz(int n) {
+        List<String> result = new ArrayList<>();
+        
+        // Проходим по числам от 1 до n
+        for (int i = 1; i <= n; i++) {
+            // Проверка условий FizzBuzz
+            if (i % 3 == 0 && i % 5 == 0) {
+                result.add("FizzBuzz");
+            } else if (i % 3 == 0) {
+                result.add("Fizz");
+            } else if (i % 5 == 0) {
+                result.add("Buzz");
+            } else {
+                result.add(String.valueOf(i)); // Добавляем число, если не делится на 3 и 5
+            }
+        }
+        
+        return result;
+    }
+
+    public static void main(String[] args) {
+        FizzBuzz fb = new FizzBuzz();
+        int n = 15; // Пример для вывода FizzBuzz до числа 15
+        List<String> result = fb.fizzBuzz(n);
+        
+        // Выводим результат
+        for (String str : result) {
+            System.out.println(str);
+        }
+    }
+}
