@@ -1,0 +1,33 @@
+// PalindromeNumber.java
+public class PalindromeNumber {
+    public boolean isPalindrome(int x) {
+        // Если число отрицательное или заканчивается нулем (кроме самого нуля), оно не палиндром
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
+        }
+        
+        int reversedHalf = 0;
+        
+        // Процесс переворачивания второй половины числа
+        while (x > reversedHalf) {
+            reversedHalf = reversedHalf * 10 + x % 10;
+            x /= 10;
+        }
+        
+        // Для четных чисел x будет равно reversedHalf, для нечетных x будет равно reversedHalf / 10
+        return x == reversedHalf || x == reversedHalf / 10;
+    }
+
+    public static void main(String[] args) {
+        PalindromeNumber solution = new PalindromeNumber();
+        
+        // Примеры для проверки
+        int num1 = 121;
+        int num2 = -121;
+        int num3 = 10;
+        
+        System.out.println("121 is palindrome: " + solution.isPalindrome(num1));  // true
+        System.out.println("-121 is palindrome: " + solution.isPalindrome(num2)); // false
+        System.out.println("10 is palindrome: " + solution.isPalindrome(num3));   // false
+    }
+}
