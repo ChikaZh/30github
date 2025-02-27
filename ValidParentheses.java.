@@ -1,0 +1,46 @@
+import java.util.Stack;
+
+public class ValidParentheses {
+    public boolean isValid(String s) {
+        // Используем стек для хранения открывающих скобок
+        Stack<Character> stack = new Stack<>();
+
+        // Проходим по строке
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            // Если это открывающая скобка, помещаем её в стек
+            if (c == '(' || c == '{' || c == '[') {
+                stack.push(c);
+            }
+            // Если это закрывающая скобка, проверяем стек
+            else if (c == ')' || c == '}' || c == ']') {
+                // Если стек пуст или верхний элемент не соответствует текущей закрывающей скобке
+                if (stack.isEmpty() || !isMatchingPair(stack.pop(), c)) {
+                    return false;
+                }
+            }
+        }
+
+        // Если стек пуст, значит, все скобки правильно закрыты
+        return stack.isEmpty();
+    }
+
+    // Метод для проверки соответствия пары скобок
+    private boolean isMatchingPair(char open, char close) {
+        return (open == '(' && close == ')') || 
+               (open == '{' && close == '}') || 
+               (open == '[' && close == ']');
+    }
+
+    // Пример использования
+    public static void main(String[] args) {
+        ValidParentheses vp = new ValidParentheses();
+        
+        String s1 = "()[]{}";
+        String s2 = "(]";
+        
+        System.out.println(vp.isValid(s1)); // true
+        System.out.println(vp.isValid(s2)); // false
+    }
+}
