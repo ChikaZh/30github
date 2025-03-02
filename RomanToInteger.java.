@@ -1,0 +1,36 @@
+public class RomanToInteger {
+    public int romanToInt(String s) {
+        // Маппинг римских чисел
+        int[] values = new int[128]; // Строки могут быть только до 128 символов
+        values['I'] = 1;
+        values['V'] = 5;
+        values['X'] = 10;
+        values['L'] = 50;
+        values['C'] = 100;
+        values['D'] = 500;
+        values['M'] = 1000;
+
+        int result = 0;
+        
+        // Проходим по строке римского числа
+        for (int i = 0; i < s.length(); i++) {
+            // Если текущее число меньше следующего, вычитаем его
+            if (i + 1 < s.length() && values[s.charAt(i)] < values[s.charAt(i + 1)]) {
+                result -= values[s.charAt(i)];
+            } else {
+                result += values[s.charAt(i)];
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        RomanToInteger rti = new RomanToInteger();
+        System.out.println(rti.romanToInt("III")); // 3
+        System.out.println(rti.romanToInt("IV")); // 4
+        System.out.println(rti.romanToInt("IX")); // 9
+        System.out.println(rti.romanToInt("LVIII")); // 58
+        System.out.println(rti.romanToInt("MCMXCIV")); // 1994
+    }
+}
