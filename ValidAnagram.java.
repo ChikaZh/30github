@@ -1,0 +1,28 @@
+import java.util.Arrays;
+
+public class ValidAnagram {
+    public boolean isAnagram(String s, String t) {
+        // Если строки имеют разную длину, они не могут быть анаграммами
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        // Преобразуем обе строки в массивы символов и сортируем
+        char[] sArray = s.toCharArray();
+        char[] tArray = t.toCharArray();
+        
+        Arrays.sort(sArray);
+        Arrays.sort(tArray);
+        
+        // Сравниваем отсортированные массивы
+        return Arrays.equals(sArray, tArray);
+    }
+
+    public static void main(String[] args) {
+        ValidAnagram solution = new ValidAnagram();
+        
+        // Примеры
+        System.out.println(solution.isAnagram("anagram", "nagaram")); // true
+        System.out.println(solution.isAnagram("rat", "car")); // false
+    }
+}
