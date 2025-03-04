@@ -1,0 +1,29 @@
+public class MissingNumber {
+    public int missingNumber(int[] nums) {
+        int n = nums.length;
+        int totalSum = n * (n + 1) / 2;  // Сумма чисел от 0 до n
+        int arraySum = 0;
+
+        // Суммируем все числа в массиве
+        for (int num : nums) {
+            arraySum += num;
+        }
+
+        // Разница между теоретической суммой и суммой элементов массива
+        return totalSum - arraySum;
+    }
+
+    public static void main(String[] args) {
+        MissingNumber solution = new MissingNumber();
+
+        // Примеры
+        int[] nums1 = {3, 7, 1, 2, 8, 4, 5};
+        System.out.println(solution.missingNumber(nums1)); // 6
+
+        int[] nums2 = {0, 1};
+        System.out.println(solution.missingNumber(nums2)); // 2
+
+        int[] nums3 = {9, 6, 4, 2, 3, 5, 7, 0, 1};
+        System.out.println(solution.missingNumber(nums3)); // 8
+    }
+}
