@@ -1,0 +1,18 @@
+public class MissingNumber {
+    public static int missingNumber(int[] nums) {
+        int n = nums.length;
+        int totalSum = (n * (n + 1)) / 2;
+        int currentSum = 0;
+
+        for (int num : nums) {
+            currentSum += num;
+        }
+
+        return totalSum - currentSum;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {3, 7, 1, 2, 8, 4, 5};
+        System.out.println("Missing number: " + missingNumber(nums)); // Output: 6
+    }
+}
