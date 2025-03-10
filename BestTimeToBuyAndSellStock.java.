@@ -1,0 +1,25 @@
+public class ClimbingStairs {
+    public int climbStairs(int n) {
+        if (n == 1) {
+            return 1; // Если 1 ступенька, то только 1 способ
+        }
+
+        int prev1 = 1; // Количество способов для ступенек n-1
+        int prev2 = 2; // Количество способов для ступенек n-2
+
+        // Для каждой ступеньки от 3 до n
+        for (int i = 3; i <= n; i++) {
+            int current = prev1 + prev2; // Способы для текущей ступеньки
+            prev1 = prev2; // Обновляем для следующей итерации
+            prev2 = current; // Обновляем для следующей итерации
+        }
+
+        return prev2; // Возвращаем количество способов для n ступенек
+    }
+
+    public static void main(String[] args) {
+        ClimbingStairs solution = new ClimbingStairs();
+        int n = 5; // Пример, число ступенек
+        System.out.println("Number of ways to climb " + n + " stairs: " + solution.climbStairs(n));
+    }
+}
