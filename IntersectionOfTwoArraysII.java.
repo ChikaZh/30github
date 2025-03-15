@@ -1,0 +1,48 @@
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
+
+public class IntersectionOfTwoArraysII {
+
+    public int[] intersect(int[] nums1, int[] nums2) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        List<Integer> result = new ArrayList<>();
+        
+        // Заполняем map элементами первого массива
+        for (int num : nums1) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        
+        // Ищем пересечение с учетом количества элементов
+        for (int num : nums2) {
+            if (map.containsKey(num) && map.get(num) > 0) {
+                result.add(num);
+                map.put(num, map.get(num) - 1);  // Уменьшаем счетчик
+            }
+        }
+        
+        // Преобразуем результат в массив
+        int[] res = new int[result.size()];
+        for (int i = 0; i < result.size(); i++) {
+            res[i] = result.get(i);
+        }
+        
+        return res;
+    }
+
+    public static void main(String[] args) {
+        IntersectionOfTwoArraysII solution = new IntersectionOfTwoArraysII();
+
+        // Пример массивов
+        int[] nums1 = {4,9,5};
+        int[] nums2 = {9,4,9,8,4};
+        
+        // Пересечение
+        int[] result = solution.intersect(nums1, nums2);
+        
+        // Выводим результат
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+}
